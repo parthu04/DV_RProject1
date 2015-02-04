@@ -117,5 +117,28 @@ source("../01 Data/plot 4.R", echo = TRUE)
 ```
 
 ####Plot Title 5
-####Plot Title 6
-####Plot Title 7
+####Item ID vs Order Quantity 
+
+First, the Order Details DataFrame is modified to instead count the number of orders made per item and the quantity ordered.
+
+As mentioned previously, `yourQuery` is replaced with `select ITEM_ID, count(ORDER_ID) orderid_count, sum(ORDER_QTY) qty_sum from order_details group by ITEM_ID`.
+
+```{r}
+source ("../01 Data/order_details2.R", echo = TRUE)
+```
+
+The following plot takes the Item ID as the x axis and total number of items ordered as the y axis. Using this plot, popularity of items can be shown by the total quantity ordered. 
+
+``` {r}
+source ("../01 Data/plot 6.R", echo = TRUE)
+```
+
+####Artist vs Unit Price of Various Titles
+
+Using the Items DataFrame for this plot, the Artist and Unit Price are graphed on the x and y axes respecitively with the Title as the key. The colors are according to the Title of the item and shows some Artists had more than one Title that also varied in price. 
+
+Take for example, "No Rest For The Weary" who had the two titles, "No Rest For The Weary" and "More Songs About Structures and Comestibles", that had different prices per unit of 16 and 17, respectively. 
+
+``` {r}
+source("../01 Data/plot 7.R", echo = TRUE)
+```

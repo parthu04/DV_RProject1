@@ -1,0 +1,2 @@
+p5 <- ggplot (df_orders, aes(x= CUSTOMER_ID, y = as.Date(ORDER_DATE, "%Y-%m-%d"))) + geom_point()
+p5
