@@ -90,7 +90,7 @@ Now we will create a few interesting plots using the data we have stored from th
 This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to Unit Price and then facets to produce a different plot for each state.
 
 ```{r}
-source("../01 Data/plot 1.R", echo = TRUE)
+source("../02 Visualizations/plot 1.R", echo = TRUE)
 ```
 
 ####Ship Date vs. Order Date for Item Title faceted by State
@@ -99,7 +99,7 @@ This plot takes the Order Date and Shipped Date in the x and y, respectively. Th
 
 
 ```{r}
-source("../01 Data/plot 2.R", echo = TRUE)
+source("../02 Visualizations/plot 2.R", echo = TRUE)
 ```
 
 ####Ship Date vs. Order Date for Item Artist faceted by State
@@ -107,13 +107,13 @@ source("../01 Data/plot 2.R", echo = TRUE)
 This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to the artist of each album (item) purchased and then facets to produce a different plot for each state.
 
 ```{r}
-source("../01 Data/plot 3.R", echo = TRUE)
+source("../02 Visualizations/plot 3.R", echo = TRUE)
 ```
 
 ####Customer City vs. Customer State
 
 ```{r}
-source("../01 Data/plot 4.R", echo = TRUE)
+source("../02 Visualizations/plot 4.R", echo = TRUE)
 ```
 
 ####Plot Title 5
@@ -130,7 +130,7 @@ source ("../01 Data/order_details2.R", echo = TRUE)
 The following plot takes the Item ID as the x axis and total number of items ordered as the y axis. Using this plot, popularity of items can be shown by the total quantity ordered. 
 
 ``` {r}
-source ("../01 Data/plot 6.R", echo = TRUE)
+source ("../02 Visualizations/plot 6.R", echo = TRUE)
 ```
 
 ####Artist vs Unit Price of Various Titles
@@ -140,5 +140,5 @@ Using the Items DataFrame for this plot, the Artist and Unit Price are graphed o
 Take for example, "No Rest For The Weary" who had the two titles, "No Rest For The Weary" and "More Songs About Structures and Comestibles", that had different prices per unit of 16 and 17, respectively. 
 
 ``` {r}
-source("../01 Data/plot 7.R", echo = TRUE)
+source("../02 Visualizations/plot 7.R", echo = TRUE)
 ```

@@ -210,7 +210,7 @@ join items i on d.item_id = i.item_id</code></pre>
 <div id="ship-date-vs.order-date-for-unit-price-faceted-by-state" class="section level4">
 <h4>Ship Date vs. Order Date for Unit Price faceted by State</h4>
 <p>This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to Unit Price and then facets to produce a different plot for each state.</p>
-<pre class="r"><code>source(&quot;../01 Data/plot 1.R&quot;, echo = TRUE)</code></pre>
+<pre class="r"><code>source(&quot;../02 Visualizations/plot 1.R&quot;, echo = TRUE)</code></pre>
 <pre><code>## 
 ## &gt; p1 &lt;- ggplot(df_combined, aes(x = as.Date(ORDER_DATE, 
 ## +     &quot;%Y-%m-%d&quot;), y = as.Date(SHIPPED_DATE, &quot;%Y-%m-%d&quot;))) + geom_point(aes(color = as.factor .... [TRUNCATED] 
@@ -224,7 +224,7 @@ join items i on d.item_id = i.item_id</code></pre>
 <div id="ship-date-vs.order-date-for-item-title-faceted-by-state" class="section level4">
 <h4>Ship Date vs. Order Date for Item Title faceted by State</h4>
 <p>This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to the title of the item purchased and then facets to produce a different plot for each state.</p>
-<pre class="r"><code>source(&quot;../01 Data/plot 2.R&quot;, echo = TRUE)</code></pre>
+<pre class="r"><code>source(&quot;../02 Visualizations/plot 2.R&quot;, echo = TRUE)</code></pre>
 <pre><code>## 
 ## &gt; p2 &lt;- ggplot(df_combined, aes(x = as.Date(ORDER_DATE, 
 ## +     &quot;%Y-%m-%d&quot;), y = as.Date(SHIPPED_DATE, &quot;%Y-%m-%d&quot;))) + geom_point(aes(color = as.factor .... [TRUNCATED] 
@@ -238,7 +238,7 @@ join items i on d.item_id = i.item_id</code></pre>
 <div id="ship-date-vs.order-date-for-item-artist-faceted-by-state" class="section level4">
 <h4>Ship Date vs. Order Date for Item Artist faceted by State</h4>
 <p>This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to the artist of each album (item) purchased and then facets to produce a different plot for each state.</p>
-<pre class="r"><code>source(&quot;../01 Data/plot 3.R&quot;, echo = TRUE)</code></pre>
+<pre class="r"><code>source(&quot;../02 Visualizations/plot 3.R&quot;, echo = TRUE)</code></pre>
 <pre><code>## 
 ## &gt; p3 &lt;- ggplot(df_combined, aes(x = as.Date(ORDER_DATE, 
 ## +     &quot;%Y-%m-%d&quot;), y = as.Date(SHIPPED_DATE, &quot;%Y-%m-%d&quot;))) + geom_point(aes(color = ARTIST))
@@ -251,7 +251,7 @@ join items i on d.item_id = i.item_id</code></pre>
 </div>
 <div id="customer-city-vs.customer-state" class="section level4">
 <h4>Customer City vs. Customer State</h4>
-<pre class="r"><code>source(&quot;../01 Data/plot 4.R&quot;, echo = TRUE)</code></pre>
+<pre class="r"><code>source(&quot;../02 Visualizations/plot 4.R&quot;, echo = TRUE)</code></pre>
 <pre><code>## 
 ## &gt; p4 &lt;- ggplot(df_customers, aes(x = as.factor(CUSTOMER_STATE), 
 ## +     y = as.factor(CUSTOMER_CITY))) + geom_point()
@@ -279,7 +279,7 @@ join items i on d.item_id = i.item_id</code></pre>
 ## 5       4             8       8
 ## 6       8             5       5</code></pre>
 <p>The following plot takes the Item ID as the x axis and total number of items ordered as the y axis. Using this plot, popularity of items can be shown by the total quantity ordered.</p>
-<pre class="r"><code>source (&quot;../01 Data/plot 6.R&quot;, echo = TRUE)</code></pre>
+<pre class="r"><code>source (&quot;../02 Visualizations/plot 6.R&quot;, echo = TRUE)</code></pre>
 <pre><code>## 
 ## &gt; p6 &lt;- ggplot(df_order_details2, aes(x = ITEM_ID, y = QTY_SUM)) + 
 ## +     geom_point()
@@ -291,7 +291,7 @@ join items i on d.item_id = i.item_id</code></pre>
 <h4>Artist vs Unit Price of Various Titles</h4>
 <p>Using the Items DataFrame for this plot, the Artist and Unit Price are graphed on the x and y axes respecitively with the Title as the key. The colors are according to the Title of the item and shows some Artists had more than one Title that also varied in price.</p>
 <p>Take for example, “No Rest For The Weary” who had the two titles, “No Rest For The Weary” and “More Songs About Structures and Comestibles”, that had different prices per unit of 16 and 17, respectively.</p>
-<pre class="r"><code>source(&quot;../01 Data/plot 7.R&quot;, echo = TRUE)</code></pre>
+<pre class="r"><code>source(&quot;../02 Visualizations/plot 7.R&quot;, echo = TRUE)</code></pre>
 <pre><code>## 
 ## &gt; p7 &lt;- ggplot(df_items, aes(x = ARTIST, y = as.factor(UNIT_PRICE), 
 ## +     color = TITLE)) + geom_point()
