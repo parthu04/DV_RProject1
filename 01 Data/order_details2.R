@@ -1,0 +1,2 @@
+df_order_details2 <- data.frame(eval(parse(text=substring(getURL(URLencode('http://129.152.144.84:5001/rest/native/?query="select ITEM_ID, count(ORDER_ID) orderid_count, sum(ORDER_QTY) qty_sum from order_details group by ITEM_ID"'), httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDB1.usuniversi01134.oraclecloud.internal', USER='DV_ORDERS', PASS='orcl', MODE='native_mode', MODEL='model', returnFor = 'R', returnDimensions = 'False'), verbose = TRUE), 1, 2^31-1))))
+head (df_order_details2)
