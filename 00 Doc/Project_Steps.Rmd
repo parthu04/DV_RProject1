@@ -20,6 +20,7 @@ Create the Project in a preffered directory. Add three folders to the directory:
 
 The Rmarkdown file with all non-generated image files will go in the Doc folder. All Rscript files that contain all R code for the project will go in the Data folder. All image files generated from R code in the Data folder will be go in the Visualizations folder.
 
+
 ##Creating Dataframes
 
 There are four different data structures stored on the RestfulRel Server that we need to access for this project. The data will be stored in dataframes.
@@ -40,31 +41,37 @@ In our case, the queries sent are as follow:
 
 The dataframes created and the outputs can be seen below.
 
+
 ####Library Calls
 ```{r}
 library("RCurl")
 library("ggplot2")
 ```
 
+
 ####Customers Dataframe
 ```{r}
 source("../01 Data/create_customers.R", echo = TRUE)
 ```
+
 
 ####Orders Dataframe
 ```{r}
 source("../01 Data/create_orders.R", echo = TRUE)
 ```
 
+
 ####Order Details Dataframe
 ```{r}
 source("../01 Data/create_order_details.R", echo = TRUE)
 ```
 
+
 ####Items Dataframe
 ```{r}
 source("../01 Data/create_items.R", echo = TRUE)
 ```
+
 
 ###The Combined Dataframe
 
@@ -81,11 +88,14 @@ This data frame looks like this:
 source("../01 Data/create_combined.R", echo = TRUE)
 ```
 
+
+
 ##Plots
 
 Now we will create a few interesting plots using the data we have stored from the database.
 
-####Ship Date vs. Order Date for Unit Price faceted by State
+
+###Ship Date vs. Order Date for Unit Price faceted by State
 
 This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to Unit Price and then facets to produce a different plot for each state.
 
@@ -93,7 +103,8 @@ This plot takes the Order Date and Shipped Date in the x and y, respectively. Th
 source("../02 Visualizations/plot 1.R", echo = TRUE)
 ```
 
-####Ship Date vs. Order Date for Item Title faceted by State
+
+###Ship Date vs. Order Date for Item Title faceted by State
 
 This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to the title of the item purchased and then facets to produce a different plot for each state.
 
@@ -102,7 +113,8 @@ This plot takes the Order Date and Shipped Date in the x and y, respectively. Th
 source("../02 Visualizations/plot 2.R", echo = TRUE)
 ```
 
-####Ship Date vs. Order Date for Item Artist faceted by State
+
+###Ship Date vs. Order Date for Item Artist faceted by State
 
 This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to the artist of each album (item) purchased and then facets to produce a different plot for each state.
 
@@ -110,14 +122,26 @@ This plot takes the Order Date and Shipped Date in the x and y, respectively. Th
 source("../02 Visualizations/plot 3.R", echo = TRUE)
 ```
 
-####Customer City vs. Customer State
+
+###Customer City vs. Customer State
+
+This plot takes the Customer City and Customer State in the x and y, respectively. It visualizes in what cities the customers are coming from.
 
 ```{r}
 source("../02 Visualizations/plot 4.R", echo = TRUE)
 ```
 
-####Plot Title 5
-####Item ID vs Order Quantity 
+
+###Order Date vs. Shipped Date according to Customer ID
+
+This plot takes the Order Date and Shipped Date in the x and y, respectively. The plot then color codes according to the customer ID.
+
+```{r}
+source("../02 Visualizations/plot 5.R", echo = TRUE)
+```
+
+
+###Item ID vs. Order Quantity 
 
 First, the Order Details DataFrame is modified to instead count the number of orders made per item and the quantity ordered.
 
@@ -133,7 +157,7 @@ The following plot takes the Item ID as the x axis and total number of items ord
 source ("../02 Visualizations/plot 6.R", echo = TRUE)
 ```
 
-####Artist vs Unit Price of Various Titles
+###Artist vs Unit Price of Various Titles
 
 Using the Items DataFrame for this plot, the Artist and Unit Price are graphed on the x and y axes respecitively with the Title as the key. The colors are according to the Title of the item and shows some Artists had more than one Title that also varied in price. 
 
